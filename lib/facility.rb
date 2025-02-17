@@ -15,4 +15,8 @@ class Facility
   def registered_vehicles
     @registered_vehicles = []
   end
+
+  def collected_fees
+    @collected_fees = 0
+  end
 end

@@ -36,5 +36,9 @@ RSpec.describe Facility do
     it 'can add registered vehicles to facility' do
       expect(@facility_1.registered_vehicles).to eq([])
     end
+
+    it 'can list collected fees' do
+      expect(@facility_1.collected_fees).to eq(0)
+    end
   end
 end
