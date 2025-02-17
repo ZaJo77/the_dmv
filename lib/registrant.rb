@@ -18,4 +18,8 @@ class Registrant
     renewed: false
   }
   end
+
+  def earn_permit
+    @permit = true
+  end
 end
