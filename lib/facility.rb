@@ -1,5 +1,5 @@
 class Facility
-  attr_reader :name, :address, :phone
+  attr_reader :name, :address, :phone, :services
 
   def initialize(facility_details)
     @facility_details = {
@@ -10,7 +10,7 @@ class Facility
     @services = []
   end
 
-  def add_services(service)
+  def add_service(service)
     @services << service
   end
 end
