@@ -1,5 +1,5 @@
 class Facility
-  attr_reader :name, :address, :phone, :services, :registered_vehicles
+  attr_reader :name, :address, :phone, :services, :registered_vehicles, :collected_fees
 
   def initialize(facility_details)
       @name = facility_details[:name]
@@ -7,17 +7,19 @@ class Facility
       @phone = facility_details[:phone]
     @services = []
     @registered_vehicles = []
+    @collected_fees = 0
   end
 
   def add_service(service)
     @services << service
   end
 
-  def collected_fees
-    @collected_fees = 0
+  def register_vehicle(vehicle)
+    if @services.include?("Vehicle Registration")
+      @registered_vehicles << vehicle
+      vehicle.registration_date = Date.today
+    end
+    @registered_vehicles
   end
 
-  def register_vehicle(vehicle)
-    @registered_vehicles << vehicle
-  end
 end
