@@ -33,4 +33,8 @@ RSpec.describe Vehicle do
       expect(@camaro.electric_vehicle?).to eq(false)
     end
   end
+
+  it 'can have a plate type' do
+    expect(@cruz.plate_type).to eq(:regular)
+  end
 end

@@ -21,5 +21,4 @@ class Facility
     end
     @registered_vehicles
   end
-
 end
