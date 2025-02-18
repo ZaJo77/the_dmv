@@ -58,5 +58,13 @@ RSpec.describe Facility do
       expect(@bolt.registration_date).to eq(Date.today)
       expect(@facility_1.collected_fees).to eq(325)
     end
+
+    it 'can log the date of registration in facility 2' do
+      expect(@facility_2.registered_vehicles).to eq([])
+      expect(@facility_2.services).to eq([])
+      @facility_2.register_vehicle(@bolt)
+      expect(@facility_2.registered_vehicles).to eq([])
+      expect(@facility_2.collected_fees).to eq(0)
+    end
   end
 end
