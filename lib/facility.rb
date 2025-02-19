@@ -28,4 +28,8 @@ class Facility
     end
     @registered_vehicles
   end
+
+  def administer_written_test(registrant)
+    @registrant = true
+  end
 end

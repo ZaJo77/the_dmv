@@ -1,6 +1,7 @@
 require 'spec_helper'
 require './lib/facility'
 require './lib/vehicle'
+require './lib/registrant'
 
 RSpec.describe Facility do
   before(:each) do
@@ -65,6 +66,14 @@ RSpec.describe Facility do
       @facility_2.register_vehicle(@bolt)
       expect(@facility_2.registered_vehicles).to eq([])
       expect(@facility_2.collected_fees).to eq(0)
+    end
+
+    it 'can administer a written test' do
+      @facility_1.add_service("Written Test")
+      registrant_1 = Registrant.new('Bruce', 18, true )
+      registrant_2 = Registrant.new('Penny', 16 )
+      registrant_3 = Registrant.new('Tucker', 15 )
+      expect(@facility_1.administer_written_test(registrant_1)).to eq(true)
     end
   end
 end
